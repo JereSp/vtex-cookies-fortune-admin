@@ -1,0 +1,3 @@
+mutation deletecookie($id: String!){
+  deleteCookie(id: $id)
+}

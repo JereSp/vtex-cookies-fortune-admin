@@ -1,0 +1,6 @@
+query search{
+  searchCookie{
+    text
+    id
+  }
+}

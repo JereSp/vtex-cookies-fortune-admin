@@ -1,0 +1,6 @@
+{
+  "admin.app.example": {
+    "component": "cookiesFortune",
+    "path": "/admin/app/iotraining"
+  }
+}

@@ -1,0 +1,3 @@
+mutation addcookie($text: String!){
+  addCookie(text: $text)
+}
