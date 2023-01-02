@@ -1,7 +1,7 @@
 import React, {useEffect} from "react"
 import { useLazyQuery } from 'react-apollo';
 import random from './graphql/searchrandomcookie.gql'
-
+import { Spinner } from 'vtex.styleguide'
 
 
 const storeCookie = () => {
@@ -15,13 +15,13 @@ const storeCookie = () => {
  }, [data])
 
 
-if(loading){
-  return (
-    <div>
-      <span>Loading...</span>
-    </div>
-  )
-}
+// if(loading){
+//   return (
+//     <div>
+//       < Spinner />
+//     </div>
+//   )
+// }
 
 const generateRandomNumber = () => {
   let initial = [];
@@ -37,22 +37,27 @@ const generateRandomNumber = () => {
 generateRandomNumber()
 
   return (
+    <div className={"flex justify-center mt3"}>
     <div>
-      <button onClick={() => {getData()}}>
-        clickeame
+      <button className={"bg-action-primary white bn h3 f1 br3 pointer:hover: pointer"} onClick={() => {getData()}}>
+        Click me!
         </button>{
           data?
           <div>
-            <p>
+            <h3>
               {data.searchRandomCookie.text}
-            </p>
-            <p>
+            </h3>
+            <h5>
               {generateRandomNumber()}
-            </p>
+            </h5>
           </div>
+          :
+          loading?
+          < Spinner />
           :
           null
         }
+    </div>
     </div>
   )
 }
